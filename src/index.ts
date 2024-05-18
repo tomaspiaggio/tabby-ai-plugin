@@ -8,8 +8,8 @@ import { SettingsTabProvider } from 'tabby-settings'
 import { ClippyConfigProvider } from './configProvider'
 import { ClippySettingsTabProvider } from './settingsTabProvider'
 import { ClippySettingsTabComponent } from './settingsTab.component'
-import { ClippyDecorator } from './terminalDecorator'
-import { ClippyHotkeyProvider } from './hotkeyProvider'
+import { AIAutocompleteDecorator } from './terminalDecorator'
+import { AIHotkeyProvider } from './hotkeyProvider'
 import { ClippyContextMenuProvider } from './contextMenu'
 
 @NgModule({
@@ -20,10 +20,10 @@ import { ClippyContextMenuProvider } from './contextMenu'
     ],
     providers: [
         { provide: TabContextMenuItemProvider, useClass: ClippyContextMenuProvider, multi: true },
-        { provide: HotkeyProvider, useClass: ClippyHotkeyProvider, multi: true },
+        { provide: HotkeyProvider, useClass: AIHotkeyProvider, multi: true },
         { provide: ConfigProvider, useClass: ClippyConfigProvider, multi: true },
         { provide: SettingsTabProvider, useClass: ClippySettingsTabProvider, multi: true },
-        { provide: TerminalDecorator, useClass: ClippyDecorator, multi: true },
+        { provide: TerminalDecorator, useClass: AIAutocompleteDecorator, multi: true },
     ],
     entryComponents: [
         ClippySettingsTabComponent,
